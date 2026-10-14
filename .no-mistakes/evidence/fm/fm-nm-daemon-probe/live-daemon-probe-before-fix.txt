@@ -1,0 +1,6 @@
+=== real-running (NM_HOME=default) ===
+[real no-mistakes daemon status -> rc=0]   ● daemon running (pid 198)
+state: working · source: run-step · validating (running)
+=== real-stopped (NM_HOME=/tmp/tmp.JkN3Ditd36) ===
+[real no-mistakes daemon status -> rc=0]   ○ daemon not running
+state: working · source: run-step · validating (running)

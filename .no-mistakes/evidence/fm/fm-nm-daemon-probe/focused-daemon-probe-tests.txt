@@ -1,0 +1,20 @@
+ok - coarse: cancellation without delivery carries no verdict
+ok - no-ci-log: cancellation without delivery carries no verdict
+ok - red-ci: cancellation without delivery carries no verdict
+ok - cancelled-test: cancellation without delivery carries no verdict
+ok - skipped-test: cancellation without delivery carries no verdict
+ok - synthetic cancelled run leaves fleet inventory unverified without a failure contradiction
+ok - cancelled-outcome: terminal delivery reports only observed evidence
+ok - cancelled-status: terminal delivery reports only observed evidence
+ok - skipped-rebase: terminal delivery reports only observed evidence
+ok - cancelled-skipped-rebase: terminal delivery reports only observed evidence
+ok - passed: terminal delivery reports only observed evidence
+ok - daemon probe classifies running
+ok - daemon probe classifies stopped
+ok - daemon probe classifies empty
+ok - daemon probe classifies unexpected
+ok - daemon probe classifies absent
+ok - daemon probe classifies refused
+ok - daemon probe classifies timeout
+ok - an unanswered daemon probe leaves a live rebased run bound
+ok - a head-tied coarse live row is exempt from the dead-daemon verdict
