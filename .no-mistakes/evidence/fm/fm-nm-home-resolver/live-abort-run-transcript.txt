@@ -1,0 +1,25 @@
+=== abort --run with resolver OFF (ambient home) ===
+before: ('01LABRUNPARK', 'running')
+aborted: false
+run: "01LABRUNPARK"
+detail: daemon not running and no run with that id is recorded (no-op)
+[rc=0]
+after: ('01LABRUNPARK', 'running')
+=== abort --run with resolver ON ===
+error: "cancellation was requested for run 01LABRUNPARK, but terminal quiescence is unconfirmed: the daemon reported no active run, but the exact run's durable state is still running"
+cancellation_requested: true
+terminal_confirmed: false
+run: "01LABRUNPARK"
+branch: fm/task
+run_state:
+  id: "01LABRUNPARK"
+  branch: fm/task
+  status: running
+  head: c91934c9
+  head_sha: c91934c9804d25775e568011ba71b8aaaaca084f
+  verification_plan: none
+  findings: none
+  steps[0]:
+help[3]: Run `no-mistakes axi status --run 01LABRUNPARK` to observe the run until it reports a terminal status,Re-run `no-mistakes axi abort` once the daemon is reachable; a repeated abort is an idempotent no-op,Do not treat the branch as released or recoverable until a terminal status is confirmed
+[rc=1]
+after: ('01LABRUNPARK', 'running')

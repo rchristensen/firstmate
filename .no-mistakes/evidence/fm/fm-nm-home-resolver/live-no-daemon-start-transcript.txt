@@ -1,0 +1,26 @@
+=== resolved reads never start a daemon (fixture wsA daemon stopped first) ===
+$ NM_HOME=/tmp/fm-nmres.cOH7yU/wsA no-mistakes daemon status
+  ○ daemon not running
+$ fm_nm_run wt axi
+bin: /usr/local/share/mise/installs/github-kunchenguid-no-mistakes/1.84.0/no-mistakes
+description: "Validate your code changes through the no-mistakes pipeline - automated code review, tests, lint, docs, push, PR, and CI - before they reach the configured push target. Use when the user asks to run no-mistakes, gate or ship or validate their changes, push safely, asks you to do a task and then validate it, or invokes /no-mistakes."
+repo: /tmp/fm-nmres.cOH7yU/proj
+current_branch: fm/task
+$ fm_nm_run wt axi status
+run:
+  id: "01LABRUNPARK"
+  branch: fm/task
+  status: cancelled
+$ fm_nm_run wt runs --limit 5
+  cancelled    fm/task              c91934c9  2026-10-15 12:03
+  completed    fm/task              c91934c9  2026-10-15 12:03
+$ fm_nm_run wt daemon status
+  ○ daemon not running
+$ fm_nm_run wt axi logs --step review --run 01LABRUNDONE
+step: review
+run: "01LABRUNDONE"
+log: "no log recorded for step \"review\" in this run"
+after reads:
+$ NM_HOME=/tmp/fm-nmres.cOH7yU/wsA no-mistakes daemon status
+  ○ daemon not running
+wsA daemon processes: 0

@@ -1,0 +1,26 @@
+=== config/nm-home-resolver: off ===
+$ bin/fm-pipeline-spend.sh record labtask
+recorded labtask s1792062215.1.abc
+[rc=0]
+ledger tail:
+{"task": "labtask", "source": "unavailable", "runs": []}
+$ FM_CREW_STATE_NO_FORGE=1 bin/fm-crew-state.sh labtask
+state: unknown · source: none · backend unreachable (tmux endpoint state: unreadable)
+[rc=0]
+
+=== config/nm-home-resolver: on ===
+$ bin/fm-pipeline-spend.sh record labtask
+already recorded labtask s1792062215.1.abc
+[rc=0]
+ledger tail:
+{"task": "labtask", "source": "unavailable", "runs": []}
+$ FM_CREW_STATE_NO_FORGE=1 bin/fm-crew-state.sh labtask
+state: done · source: run-step · run passed: PR state unknown (no PR identity) · run: 01LABRUNDONE
+[rc=0]
+
+=== config/nm-home-resolver: on, new task incarnation ===
+$ bin/fm-pipeline-spend.sh record labtask
+recorded labtask s1792064022.2.def
+[rc=0]
+ledger tail:
+{"task":"labtask","spawn_gen":"s1792064022.2.def","recorded_at":"2026-10-15T12:03:42Z","source":"no-mistakes-state","reason":null,"repo":"/tmp/fm-nmres.cOH7yU/proj","branch":"fm/task","since":"2026-10-15T12:02:55Z","total":{"invocations":0,"exit":{},"duration_ms":0,"input_tokens":{"total":0,"unknown":0},"output_tokens":{"total":0,"unknown":0},"cache_read_tokens":{"total":0,"unknown":0},"cache_creation_tokens":{"total":0,"unknown":0}},"runs":[{"id":"01LABRUNDONE","status":"completed","created_at":"2026-10-15T12:03:02Z","invocations":0,"exit":{},"duration_ms":0,"input_tokens":{"total":0,"unknown":0},"output_tokens":{"total":0,"unknown":0},"cache_read_tokens":{"total":0,"unknown":0},"cache_creation_tokens":{"total":0,"unknown":0}}],"purposes":[]}

@@ -1,0 +1,74 @@
+=== S1 baseline: no config/nm-home-resolver -> ambient home (HOME=/tmp/fm-nmres.cOH7yU/acct) ===
+$ bash -c . "$1/bin/fm-nm-run-lib.sh"; shift; "$@" _ /home/onit/.no-mistakes/worktrees/91d79474e1a0/01M4ZPM0R4G8481B0ZZQWTEBTF fm_nm_run /tmp/fm-nmres.cOH7yU/wt 15 runs --limit 5
+[rc=0]
+$ bash -c . "$1/bin/fm-nm-run-lib.sh"; shift; "$@" _ /home/onit/.no-mistakes/worktrees/91d79474e1a0/01M4ZPM0R4G8481B0ZZQWTEBTF fm_nm_run /tmp/fm-nmres.cOH7yU/wt 15 daemon status
+  ○ daemon not running
+[rc=0]
+$ bash -c . "$1/bin/fm-nm-run-lib.sh"; shift; "$@" _ /home/onit/.no-mistakes/worktrees/91d79474e1a0/01M4ZPM0R4G8481B0ZZQWTEBTF fm_nm_state_db /tmp/fm-nmres.cOH7yU/wt
+/tmp/fm-nmres.cOH7yU/acct/.no-mistakes/state.sqlite
+[rc=0]
+
+=== S2 opt-in: config/nm-home-resolver -> /tmp/fm-nmres.cOH7yU/resolver ===
+$ bash -c . "$1/bin/fm-nm-run-lib.sh"; shift; "$@" _ /home/onit/.no-mistakes/worktrees/91d79474e1a0/01M4ZPM0R4G8481B0ZZQWTEBTF fm_nm_run /tmp/fm-nmres.cOH7yU/wt 15 runs --limit 5
+  completed    fm/task              c91934c9  2026-10-15 12:03
+[rc=0]
+$ bash -c . "$1/bin/fm-nm-run-lib.sh"; shift; "$@" _ /home/onit/.no-mistakes/worktrees/91d79474e1a0/01M4ZPM0R4G8481B0ZZQWTEBTF fm_nm_run /tmp/fm-nmres.cOH7yU/wt 15 daemon status
+  ● daemon running (pid 2892189)
+[rc=0]
+$ bash -c . "$1/bin/fm-nm-run-lib.sh"; shift; "$@" _ /home/onit/.no-mistakes/worktrees/91d79474e1a0/01M4ZPM0R4G8481B0ZZQWTEBTF fm_nm_run /tmp/fm-nmres.cOH7yU/wt 15 axi status --run 01LABRUNDONE
+run:
+  id: "01LABRUNDONE"
+  branch: fm/task
+  status: completed
+  head: c91934c9
+  head_sha: c91934c9804d25775e568011ba71b8aaaaca084f
+  verification_plan: none
+  findings: none
+  steps[0]:
+outcome: passed
+[rc=0]
+$ bash -c . "$1/bin/fm-nm-run-lib.sh"; shift; "$@" _ /home/onit/.no-mistakes/worktrees/91d79474e1a0/01M4ZPM0R4G8481B0ZZQWTEBTF fm_nm_state_db /tmp/fm-nmres.cOH7yU/wt
+/tmp/fm-nmres.cOH7yU/wsA/state.sqlite
+[rc=0]
+resolver was called with:
+/tmp/fm-nmres.cOH7yU/wt
+
+=== S3 explicit NM_HOME wins (NM_HOME=/tmp/fm-nmres.cOH7yU/explicit) ===
+$ NM_HOME=/tmp/fm-nmres.cOH7yU/explicit fm_nm_run wt runs
+[rc=0]
+/tmp/fm-nmres.cOH7yU/explicit/state.sqlite
+resolver calls: 0
+
+=== S4 scope: out-of-scope 'daemon stop' keeps ambient home; wsA daemon must survive ===
+$ bash -c . "$1/bin/fm-nm-run-lib.sh"; shift; "$@" _ /home/onit/.no-mistakes/worktrees/91d79474e1a0/01M4ZPM0R4G8481B0ZZQWTEBTF fm_nm_run /tmp/fm-nmres.cOH7yU/wt 15 daemon stop
+  ✓ daemon stopped
+[rc=0]
+resolver calls: 0
+$ NM_HOME=/tmp/fm-nmres.cOH7yU/wsA no-mistakes daemon status
+  ● daemon running (pid 2892189)
+
+=== S5 unusable resolver answers fall back to ambient ===
+--- resolver mode: fail
+$ bash -c . "$1/bin/fm-nm-run-lib.sh"; shift; "$@" _ /home/onit/.no-mistakes/worktrees/91d79474e1a0/01M4ZPM0R4G8481B0ZZQWTEBTF fm_nm_state_db /tmp/fm-nmres.cOH7yU/wt
+/tmp/fm-nmres.cOH7yU/acct/.no-mistakes/state.sqlite
+[rc=0]
+no-such-home not created
+--- resolver mode: nonexistent
+$ bash -c . "$1/bin/fm-nm-run-lib.sh"; shift; "$@" _ /home/onit/.no-mistakes/worktrees/91d79474e1a0/01M4ZPM0R4G8481B0ZZQWTEBTF fm_nm_state_db /tmp/fm-nmres.cOH7yU/wt
+/tmp/fm-nmres.cOH7yU/acct/.no-mistakes/state.sqlite
+[rc=0]
+no-such-home not created
+--- resolver mode: relative
+$ bash -c . "$1/bin/fm-nm-run-lib.sh"; shift; "$@" _ /home/onit/.no-mistakes/worktrees/91d79474e1a0/01M4ZPM0R4G8481B0ZZQWTEBTF fm_nm_state_db /tmp/fm-nmres.cOH7yU/wt
+/tmp/fm-nmres.cOH7yU/acct/.no-mistakes/state.sqlite
+[rc=0]
+no-such-home not created
+--- resolver mode: twolines
+$ bash -c . "$1/bin/fm-nm-run-lib.sh"; shift; "$@" _ /home/onit/.no-mistakes/worktrees/91d79474e1a0/01M4ZPM0R4G8481B0ZZQWTEBTF fm_nm_state_db /tmp/fm-nmres.cOH7yU/wt
+/tmp/fm-nmres.cOH7yU/acct/.no-mistakes/state.sqlite
+[rc=0]
+no-such-home not created
+--- config names a relative path
+$ bash -c . "$1/bin/fm-nm-run-lib.sh"; shift; "$@" _ /home/onit/.no-mistakes/worktrees/91d79474e1a0/01M4ZPM0R4G8481B0ZZQWTEBTF fm_nm_state_db /tmp/fm-nmres.cOH7yU/wt
+/tmp/fm-nmres.cOH7yU/acct/.no-mistakes/state.sqlite
+[rc=0]
