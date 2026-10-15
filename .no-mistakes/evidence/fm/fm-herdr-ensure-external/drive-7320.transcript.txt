@@ -1,0 +1,39 @@
+[16:08:45.480] lab session: fm-lab-ensure7320-830860-18344
+[16:08:45.703] session_dir=/home/onit/.config/herdr/sessions/fm-lab-ensure7320-830860-18344 running=true servers=1
+
+[16:08:45.704] === S1 fast path: server running, no markers ===
+[16:08:45.733] rc=0 elapsed=0.01s running=true servers=1
+
+[16:08:45.733] === S2 replacement marker while running: callers wait, then proceed ===
+[16:08:49.739] after 4s: ensure STILL WAITING (running=true, marker present)
+[16:08:49.740] marker removed
+[16:08:49.795] rc=0 elapsed=4.03s running=true servers=1
+
+[16:08:49.795] === S3 replacement marker never clears (server running): bounded wait, clear error ===
+error: herdr server for session 'fm-lab-ensure7320-830860-18344' is being replaced (/home/onit/.config/herdr/sessions/fm-lab-ensure7320-830860-18344/firstmate-server-replacing) and the replacement did not finish after 60 checks; Firstmate will not start or use a server while that marker exists
+[16:09:19.954] rc=1 elapsed=30.13s running=true servers=1
+
+[16:09:19.955] === S4 externally managed (owner marker), server down: never starts, bounded wait, error names owner ===
+[16:09:21.242] stopped: running=false servers=0; owner marker: systemd user unit herdr@fm-lab-ensure7320-830860-18344.service
+error: herdr server for session 'fm-lab-ensure7320-830860-18344' is managed by systemd user unit herdr@fm-lab-ensure7320-830860-18344.service (/home/onit/.config/herdr/sessions/fm-lab-ensure7320-830860-18344/firstmate-server-owner) and did not report running after 60 checks; Firstmate will not start it - start or repair it through systemd user unit herdr@fm-lab-ensure7320-830860-18344.service
+[16:09:51.955] rc=1 elapsed=30.68s running=false servers=0
+
+[16:09:51.955] === S5 owner-managed live handoff: replacement marker, owner restarts server, callers proceed only after marker clears ===
+[16:09:54.976] after 3s: waiting=yes running=false servers=0
+[16:09:54.977] owner (stand-in: lab provision) brings the server back
+[16:09:55.207] server back: running=true servers=1
+[16:09:58.210] 3s later, marker still present: waiting=yes
+[16:09:58.213] replacement marker removed
+[16:09:58.549] rc=0 elapsed=6.56s running=true servers=1
+
+[16:09:58.550] === S6 Firstmate-owned default (no markers), server down: ensure starts it ===
+[16:09:59.687] stopped: running=false servers=0
+[16:09:59.734] rc=0 elapsed=0.02s running=true servers=1
+
+[16:09:59.734] === S7 replacement marker with no owner, server down: wait, then Firstmate start once marker clears ===
+[16:10:00.842] stopped: running=false servers=0
+[16:10:03.866] after 3s: waiting=yes running=false servers=0
+[16:10:03.869] marker removed
+[16:10:03.917] rc=0 elapsed=3.05s running=true servers=1
+
+[16:10:04.527] teardown rc=0
