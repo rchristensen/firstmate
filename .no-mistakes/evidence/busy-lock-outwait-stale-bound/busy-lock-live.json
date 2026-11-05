@@ -1,0 +1,145 @@
+[
+  {
+    "command": [
+      "$LAB/baseline/fm-busy-event.sh",
+      "arm",
+      "$LAB/before",
+      "task"
+    ],
+    "exit": 0,
+    "elapsed_seconds": 0.013,
+    "stdout": "g1793849848.308262.27033",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "$LAB/baseline/fm-busy-event.sh",
+      "retire",
+      "$LAB/before",
+      "task",
+      "--gen",
+      "g1793849848.308262.27033"
+    ],
+    "exit": 1,
+    "elapsed_seconds": 2.023,
+    "stdout": "",
+    "stderr": "error: busy-state lock timeout for task",
+    "observation": "Previous version refuses a fresh orphan and leaves busy state."
+  },
+  {
+    "command": [
+      "{run-worktree}/bin/fm-busy-event.sh",
+      "arm",
+      "$LAB/fresh",
+      "task"
+    ],
+    "exit": 0,
+    "elapsed_seconds": 0.014,
+    "stdout": "g1793849850.308373.20015",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "{run-worktree}/bin/fm-busy-event.sh",
+      "retire",
+      "$LAB/fresh",
+      "task",
+      "--gen",
+      "g1793849850.308373.20015"
+    ],
+    "exit": 0,
+    "elapsed_seconds": 4.478,
+    "stdout": "",
+    "stderr": "",
+    "observation": "First retire waits for default stale bound, removes record, generation, and abandoned lock."
+  },
+  {
+    "command": [
+      "{run-worktree}/bin/fm-busy-event.sh",
+      "arm",
+      "$LAB/holder",
+      "task"
+    ],
+    "exit": 0,
+    "elapsed_seconds": 0.013,
+    "stdout": "g1793849855.308830.5295",
+    "stderr": ""
+  },
+  {
+    "scenario": "Active holder releases before stale bound",
+    "elapsed_seconds": 1.027,
+    "exit": 0,
+    "observation": "After one second waiter still running, holder marker and record unchanged; after release retire succeeds and removes state.",
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "{run-worktree}/bin/fm-busy-event.sh",
+      "arm",
+      "$LAB/future",
+      "task"
+    ],
+    "exit": 0,
+    "elapsed_seconds": 0.013,
+    "stdout": "g1793849856.308956.25038",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "{run-worktree}/bin/fm-busy-event.sh",
+      "retire",
+      "$LAB/future",
+      "task",
+      "--gen",
+      "g1793849856.308956.25038"
+    ],
+    "exit": 1,
+    "elapsed_seconds": 6.967,
+    "stdout": "",
+    "stderr": "error: busy-state lock timeout for task",
+    "observation": "Future-dated lock refused within bounded wait; busy record and generation unchanged."
+  },
+  {
+    "command": [
+      "{run-worktree}/bin/fm-busy-event.sh",
+      "retire",
+      "$LAB/future",
+      "task",
+      "--gen",
+      "g1793849856.308956.25038"
+    ],
+    "exit": 0,
+    "elapsed_seconds": 0.01,
+    "stdout": "",
+    "stderr": "",
+    "observation": "Retry succeeds after holder releases."
+  },
+  {
+    "command": [
+      "{run-worktree}/bin/fm-busy-event.sh",
+      "arm",
+      "$LAB/aged",
+      "task"
+    ],
+    "exit": 0,
+    "elapsed_seconds": 0.013,
+    "stdout": "g1793849863.309655.15763",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "{run-worktree}/bin/fm-busy-event.sh",
+      "retire",
+      "$LAB/aged",
+      "task",
+      "--gen",
+      "g1793849863.309655.15763"
+    ],
+    "exit": 0,
+    "elapsed_seconds": 0.013,
+    "stdout": "",
+    "stderr": "",
+    "observation": "Already-stale lock retired promptly without waiting another stale interval."
+  }
+]
