@@ -1,0 +1,4 @@
+Required launch directory primary-root predicate exit: 1
+/usr/local/share/mise/installs/aqua-openai-codex/0.166.0/bin/codex
+codex-cli 0.166.0
+tmux is absent from PATH
