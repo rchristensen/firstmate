@@ -1,0 +1,9 @@
+ok - codex WARNING: failed to clean up stale arg0 temp dirs: Cross-device link (os error 18)
+codex-cli 0.167.1 still publishes the hook feature flag firstmate disables
+ok - codex WARNING: failed to clean up stale arg0 temp dirs: Cross-device link (os error 18)
+codex-cli 0.167.1 accepts the requested hook disablement for a firstmate crewmate launch
+ok - codex WARNING: failed to clean up stale arg0 temp dirs: Cross-device link (os error 18)
+codex-cli 0.167.1: Stop parser checked 12 isolated cases with clean wrapper JSON and bounded continuation
+ok - codex WARNING: failed to clean up stale arg0 temp dirs: Cross-device link (os error 18)
+codex-cli 0.167.1: the SessionStart hook digest detects the installed Codex and renders its protocol
+# all fm-codex-hook-layer-live-e2e tests passed

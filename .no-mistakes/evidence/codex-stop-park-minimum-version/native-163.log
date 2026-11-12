@@ -1,0 +1,2 @@
+Codex 0.163.0: real native SessionStart hook -> harness=codex; Stop-park --capable exit=0 (expected 0)
+lock acquired: harness pid 447505
