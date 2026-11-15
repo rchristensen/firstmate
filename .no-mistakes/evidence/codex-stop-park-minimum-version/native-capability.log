@@ -1,2 +1,5 @@
-Codex 0.167.1: real native SessionStart hook -> harness=codex; Stop-park --capable exit=0 (expected 0)
-lock acquired: harness pid 448209
+newer-stable-capable=0
+without-opt-in=1
+foreign-owner=1
+primary harness: codex; Mode: Codex foreground checkpoint. (observed in real model request)
+ok - codex-cli 0.169.0: real native hook accepted newer stable release and refused absent opt-in and foreign ownership

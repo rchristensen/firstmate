@@ -1,0 +1,5 @@
+below-floor-capable=1
+without-opt-in=1
+foreign-owner=1
+primary harness: codex; Mode: Codex foreground checkpoint. (observed in real model request)
+ok - codex-cli 0.162.0: real native hook rejected below-floor release and refused absent opt-in and foreign ownership
