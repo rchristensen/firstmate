@@ -1,0 +1,1 @@
+ok - claude 2.1.326 (Claude Code): unregistered channel prompts; registered channels reach composer

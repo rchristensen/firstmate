@@ -1,0 +1,13 @@
+trusted: /tmp/fm-claude-add-dir-trust-live.L3KMKo/wt
+trusted (project root): /tmp/fm-claude-add-dir-trust-live.L3KMKo/project
+trusted (task channel): /tmp/fm-claude-add-dir-trust-live.L3KMKo/state/operational-inbox
+trusted (task channel): /tmp/fm-claude-add-dir-trust-live.L3KMKo/state/task.inbox
+trusted (task channel): /tmp/fm-claude-add-dir-trust-live.L3KMKo/data/task
+trusted (task channel): /tmp/fm-claude-add-dir-trust-live.L3KMKo/code/.agents/skills
+Claude 2.1.326 (Claude Code) still prompts for a sibling inbox after registration of the four channels.
+error: refusing to pre-register Claude trust: task channel '/tmp/fm-claude-add-dir-trust-live.L3KMKo/data/task' resolves outside its declared path
+The rejected symlink left the Claude trust store byte-for-byte unchanged.
+trusted: /tmp/fm-claude-add-dir-trust-live.L3KMKo/secondmate
+trusted: /tmp/fm-claude-add-dir-trust-live.L3KMKo/secondmate
+trusted (task channel): /tmp/fm-claude-add-dir-trust-live.L3KMKo/parent-state/mate.inbox
+Claude 2.1.326 (Claude Code) prompted for the unregistered parent inbox and reached the composer after exact secondmate inbox registration.
