@@ -1,0 +1,28 @@
+Native Codex terminal sessions in private tmux, with a synthetic loopback model and disposable Firstmate homes.
+[newer-release] running codex-cli 0.171.0; login-shell PATH resolves codex-cli 0.171.0; opt-in=True
+[newer-release] SessionStart output: primary harness: codex | Mode: Codex asynchronous Stop-hook-owned supervision.
+[newer-release] native transcript originator=codex-tui; park registered=True
+[newer-release] provider requests during startup: ['/v1/responses', '/v1/responses']
+[newer-release] native async Stop outcome=waiting; owner alive; zero provider requests over three seconds after the initial turn
+[newer-release] Codex pane: • Local Codex verification complete.
+[minimum-release] running codex-cli 0.163.0; login-shell PATH resolves codex-cli 0.171.0; opt-in=True
+[minimum-release] SessionStart output: primary harness: codex | Mode: Codex asynchronous Stop-hook-owned supervision.
+[minimum-release] native transcript originator=codex-tui; park registered=True
+[minimum-release] provider requests during startup: ['/v1/responses', '/v1/responses']
+[minimum-release] native async Stop outcome=waiting; owner alive; zero provider requests over three seconds after the initial turn
+[minimum-release] Codex pane: • Local Codex verification complete.
+[below-minimum-with-newer-path] running codex-cli 0.162.0; login-shell PATH resolves codex-cli 0.171.0; opt-in=True
+[below-minimum-with-newer-path] SessionStart output: primary harness: codex | Mode: Codex foreground checkpoint.
+[below-minimum-with-newer-path] native transcript originator=codex-tui; park registered=False
+[below-minimum-with-newer-path] native Stop left no park record
+[below-minimum-with-newer-path] Codex pane: • Local Codex verification complete.
+[prerelease-with-newer-path] running codex-cli 0.163.0-alpha.1; login-shell PATH resolves codex-cli 0.171.0; opt-in=True
+[prerelease-with-newer-path] SessionStart output: primary harness: codex | Mode: Codex foreground checkpoint.
+[prerelease-with-newer-path] native transcript originator=codex-tui; park registered=False
+[prerelease-with-newer-path] native Stop left no park record
+[prerelease-with-newer-path] Codex pane: • Local Codex verification complete.
+[opt-out] running codex-cli 0.171.0; login-shell PATH resolves codex-cli 0.171.0; opt-in=False
+[opt-out] SessionStart output: primary harness: codex | Mode: Codex foreground checkpoint.
+[opt-out] native transcript originator=codex-tui; park registered=False
+[opt-out] native Stop left no park record
+[opt-out] Codex pane: • Local Codex verification complete.

@@ -1,0 +1,2 @@
+ok - codex codex-cli 0.171.0: Stop parser checked 12 isolated cases with clean wrapper JSON and bounded continuation
+ok - codex codex-cli 0.171.0: the SessionStart hook digest detects the installed Codex and renders its protocol
