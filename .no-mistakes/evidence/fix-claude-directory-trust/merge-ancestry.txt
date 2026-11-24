@@ -1,0 +1,7 @@
+Target 1c8b7b81d72eb7d976c1ad6d9eb3b40d19bc7b0f
+Parents 423789072d197504191d35284d5d454487af3746 68918448b586b276d247ab28e123e9d75c9ba558
+Subject Merge remote-tracking branch 'origin/main' into fix-claude-directory-trust
+Previous PR head is an ancestor of the target. Updating from that head is a fast-forward.
+Incorporated upstream fix 68918448b586b276d247ab28e123e9d75c9ba558
+Subject ci: pack every job to ~15 min from measured timings, warn at 20 min, faster lint (#8431)
+The target workflow files match the upstream CI-fix commit.

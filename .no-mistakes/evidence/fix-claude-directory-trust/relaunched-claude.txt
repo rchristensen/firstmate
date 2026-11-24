@@ -1,0 +1,45 @@
+
+ ▐▛███▛█   Claude Code v2.1.330
+▝▜██████▀  Opus 5.5 · API Usage Billing
+ ▝▝   ▝▝   <lab>/pool/.treehouse/project-1f40ee/1/project
+
+
+❯ : Firstmate operational input waiting: read
+  '<lab>/state/operational-inbox/1795548638-b80111bc388148fa.msg' and handle its
+  contents as Firstmate operational input.
+
+● API Error: 400 Synthetic local test endpoint. No model call was made.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                                                                                            ◐ medium · /effort
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+❯ 
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  ⏵⏵ bypass permissions on (shift+tab to cycle) · ← for agents

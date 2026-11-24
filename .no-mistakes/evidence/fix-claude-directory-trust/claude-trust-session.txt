@@ -1,0 +1,18 @@
+2.1.330 (Claude Code)
+Unregistered ship channels: displayed the added-directory trust prompt
+trusted: <lab>/worker
+trusted (project root): <lab>/project
+trusted (task channel): <lab>/state/operational-inbox
+trusted (task channel): <lab>/state/task.inbox
+trusted (task channel): <lab>/data/task
+trusted (task channel): <lab>/code/.agents/skills
+Registered ship channels: opened the composer and exited with status 0
+trusted: <lab>/secondmate
+trusted (task channel): <lab>/state/mate.inbox
+Registered secondmate inbox: opened the composer and exited with status 0
+Symlink escape (exit 1): error: refusing to pre-register Claude trust: task channel '<lab>/data/task' resolves outside its declared path
+Traversal ID (exit 1): error: refusing to pre-register Claude trust: invalid task-channel id '../task'
+Claude config directory (exit 1): error: refusing to pre-register Claude trust: task channel '<lab>/operator' is the Claude config directory
+Declined external imports (exit 1): error: project entry for <lab>/project in <lab>/operator/.claude.json already declined external CLAUDE.md imports; refusing to override that consent. To recover, remove hasClaudeMdExternalIncludesApproved and hasClaudeMdExternalIncludesWarningShown from that project entry and approve the imports dialog interactively once
+error: refusing to pre-register Claude trust: could not record trust for '<lab>/worker' and project '<lab>/project' in '<lab>/operator/.claude.json'
+Every refused registration left the store byte-for-byte unchanged.

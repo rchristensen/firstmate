@@ -1,0 +1,17 @@
+spawn status: 0
+fm-gate-refuse: gate agent lifecycle permitted only against lab home <lab>
+warning: <lab>/data/trust-live-333358/launch-brief.md records no ship branch; defaulting to legacy branch fm/trust-live-333358
+warning: <lab>/data/trust-live-333358/launch-brief.md records no delivery contract line (scaffolded before ship briefs recorded one); launching on the explicit --mode local-only - confirm its definition of done matches
+notice: trust-live-333358 ships mode=local-only while the standing posture for project is no-mistakes - less rigor than the captain's standing posture; proceed only on a current explicit captain instruction or an intake judgment you can state
+spawned trust-live-333358 harness=claude kind=ship mode=local-only yolo=off window=primary:fm-trust-live-333358 worktree=<lab>/pool/.treehouse/project-1f40ee/1/project
+Claude Code reached the composer in spawned-claude
+The automatic brief reached the local endpoint and returned a terminal HTTP 400.
+relaunch status: 0
+fm-gate-refuse: gate agent lifecycle permitted only against lab home <lab>
+fm-gate-refuse: gate agent lifecycle permitted only against lab home <lab>
+warning: <lab>/data/trust-live-333358/launch-brief.md records no ship branch; defaulting to legacy branch fm/trust-live-333358
+warning: <lab>/data/trust-live-333358/launch-brief.md records no delivery contract line (scaffolded before ship briefs recorded one); launching on the explicit --mode local-only - confirm its definition of done matches
+notice: trust-live-333358 ships mode=local-only while the standing posture for project is no-mistakes - less rigor than the captain's standing posture; proceed only on a current explicit captain instruction or an intake judgment you can state
+relaunched trust-live-333358 harness=claude from=claude model=default effort=default backend=tmux endpoint=primary:fm-trust-live-333358 worktree=<lab>/pool/.treehouse/project-1f40ee/1/project
+Relaunch restored the missing task inbox trust entry.
+Claude Code reached the composer in relaunched-claude
